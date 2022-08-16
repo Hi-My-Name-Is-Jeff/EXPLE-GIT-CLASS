@@ -1,0 +1,148 @@
+/* css general */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  text-align: justify;
+  padding: 10px;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer img {
+  width: 100px;
+  height: max-content;
+  margin-left: 25px;
+}
+
+/* vista mobile */
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .gridContainer {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "navIzq navDer"
+      "parrafo parrafo"
+      "img img"
+      "footer footer";
+    grid-template-columns: repeat(2, auto);;
+    grid-template-rows: 100px 70px auto 1fr auto;
+  }
+  header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+  }
+  div.navIzq {
+    grid-area: navIzq;
+    background-color: blueviolet;
+  }
+  .navIzq ul,
+  .navDer ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  li {
+    padding: 10px;
+    list-style-type: none;
+  }
+  div.navDer {
+    grid-area: navDer;
+    background-color:brown;
+  }
+  section.parrafo {
+    grid-area: parrafo;
+    background-color:cadetblue;
+  }
+  section.imgParrafo {
+    grid-area: img;
+    background-color:chartreuse;
+  }
+  .imgParrafo img {
+    width: 90%;
+    margin-left: 5%;
+  }
+  footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color:cornflowerblue;
+    align-items: center;
+  }
+  footer img {
+    width: 100px;
+    height: max-content;
+    margin-left: 0px!important;
+    margin-bottom: 15px;
+  }
+  footer h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+/* vista desktop */
+@media only screen and (min-width: 768px) {
+  .gridContainer {
+    display: grid;
+    grid-template-areas:
+      "navIzq navIzq header header navDer navDer"
+      "parrafo parrafo parrafo img img img"
+      "footer footer footer footer footer footer";
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: 100px auto 200px;
+  }
+  header {
+    grid-area: header;
+    text-align: center;
+    background-color:aqua;
+  }
+  header img {
+    width: 100px;
+    height: max-content;
+  }
+  div.navIzq {
+    grid-area: navIzq;
+    background-color:blue;
+  }
+  .navIzq ul,
+  .navDer ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  li {
+    padding: 10px;
+    list-style-type: none;
+    position: relative;
+    top: 20px;
+  }
+  div.navDer {
+    grid-area: navDer;
+    background-color:blueviolet
+  }
+  section.parrafo {
+    grid-area: parrafo;
+    background-color:brown;
+  }
+  section.imgParrafo {
+    grid-area: img;
+    background-color:cadetblue
+  }
+  .imgParrafo img {
+    width: 90%;
+    margin-left: 5%;
+  }
+  footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-around;
+    background-color: burlywood;
+  }
+}
